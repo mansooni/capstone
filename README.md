@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ardupilot SITL Gazebo Plugin
 ============================
 
@@ -121,6 +122,9 @@ DFFICULTIES ENCOUTERED
      to end up in ground station link loss, is quite a thing ^^)
 
 
+=======
+# capstone
+>>>>>>> 5c9d9418a9a26fa5bf7e177fed19c84d9cd12b87
 =======
 # capstone
 >>>>>>> 5c9d9418a9a26fa5bf7e177fed19c84d9cd12b87
