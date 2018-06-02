@@ -970,7 +970,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file://~/catkin_ws/BlockBar/image/blocking.material</uri>
+                            <uri>file:///home/manros/catkin_ws/BlockBar/image/blocking.material</uri>
                         </script>
                     </material>
                 </visual>
@@ -982,7 +982,8 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 <axis>
                     <xyz>0 0 0</xyz>
                 </axis>
-            </joint>
+            </joint>1
+
             <joint name="blocking_bar_joint" type="revolute">
                 <parent>bar</parent>
                 <child>blocking_bar</child>
@@ -995,7 +996,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     </limit>
                 </axis>
             </joint>
-            <plugin name="BlockingBar" filename="~/catkin_ws/BlockBar/build/libblocking.so">
+            <plugin name="BlockingBar" filename="/home/manros/catkin_ws/BlockBar/build/libblocking.so">
             </plugin>
         </model>
                 
@@ -1089,7 +1090,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file://~/catkin_ws/BlockBar/image/blocking.material</uri>
+                            <uri>file:///home/manros/catkin_ws/BlockBar/image/blocking.material</uri>
                         </script>
                     </material>
                 </visual>
@@ -1114,7 +1115,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     </limit>
                 </axis>
             </joint>
-            <plugin name="BlockingBar" filename="~/catkin_ws/BlockBar/build/libblocking.so">
+            <plugin name="BlockingBar" filename="/home/manros/catkin_ws/BlockBar/build/libblocking.so">
             </plugin>
         </model>
         
@@ -1209,7 +1210,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file://~/catkin_ws/BlockBar/image/blocking.material</uri>
+                            <uri>file:///home/manros/catkin_ws/BlockBar/image/blocking.material</uri>
                         </script>
                     </material>
                 </visual>
@@ -1234,7 +1235,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     </limit>
                 </axis>
             </joint>
-            <plugin name="BlockingBar" filename="~/catkin_ws/BlockBar/build/libblocking.so">
+            <plugin name="BlockingBar" filename="/home/manros/catkin_ws/BlockBar/build/libblocking.so">
             </plugin>
         </model>
 <!-- blocking bar end -->
