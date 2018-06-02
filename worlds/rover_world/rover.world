@@ -50,7 +50,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <geometry>
             <plane>
               <normal>0 0 1</normal>
-              <size>30 20</size>
+              <size>25 20</size>
             </plane>
           </geometry>
           <material>
@@ -66,7 +66,8 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
 <!-- course end -->
 
 <!-- box start -->
-    <model name='container_1f'>
+<!-- container 1 - 1 layer -->
+    <model name='container1_1f'>
       <model name='Big box 4'>
         <pose frame=''>-0.8508 -2.53569 0.172748 0 0 0</pose>
         <static>0</static>
@@ -467,12 +468,14 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <pose frame=''>-4.63132 -4.01567 0 0 -0 0</pose>
+      <pose frame=''>-8.63132 1 0 0 -0 0</pose>
       <static>1</static>
     </model>
 
-<model name='container_2f'>
-      <model name='Big box 4'>
+
+<!-- container 2 - 1 layer -->
+    <model name='container2_1f'>
+      <model name='Big box 5'>
         <pose frame=''>-0.8508 -2.53569 0.172748 0 0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -522,7 +525,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone'>
+      <model name='Big box 5_clone'>
         <pose frame=''>-0.850293 -1.7623 0.176435 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -572,7 +575,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0'>
+      <model name='Big box 5_clone_0'>
         <pose frame=''>-0.852613 -0.964561 0.176453 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -622,7 +625,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0_clone'>
+      <model name='Big box 5_clone_0_clone'>
         <pose frame=''>-0.851649 -0.164524 0.176138 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -672,7 +675,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0_clone_0'>
+      <model name='Big box 5_clone_0_clone_0'>
         <pose frame=''>0.32954 -2.5334 0.176383 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -722,7 +725,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0_clone_0_clone'>
+      <model name='Big box 5_clone_0_clone_0_clone'>
         <pose frame=''>0.331033 -1.733 0.177657 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -772,7 +775,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0_clone_0_clone_clone'>
+      <model name='Big box 5_clone_0_clone_0_clone_clone'>
         <pose frame=''>0.327333 -0.960861 0.178218 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -822,7 +825,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <model name='Big box 4_clone_0_clone_0_clone_clone_clone'>
+      <model name='Big box 5_clone_0_clone_0_clone_clone_clone'>
         <pose frame=''>0.331221 -0.167196 0.177069 0 -0 0</pose>
         <static>0</static>
         <link name='link'>
@@ -872,12 +875,827 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
           <gravity>1</gravity>
         </link>
       </model>
-      <pose frame=''>-4.63132 -4.01567 1.243402 0 -0 0</pose>
+      <pose frame=''>0.63132 1 0 0 -0 0</pose>
       <static>1</static>
     </model>
-    
+
+
+<!-- container 1 - 2 layer -->
+
+<model name='container1_2f'>
+      <model name='Big box 6'>
+        <pose frame=''>-0.8508 -2.53569 0.172748 0 0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone'>
+        <pose frame=''>-0.850293 -1.7623 0.176435 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0'>
+        <pose frame=''>-0.852613 -0.964561 0.176453 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0_clone'>
+        <pose frame=''>-0.851649 -0.164524 0.176138 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0_clone_0'>
+        <pose frame=''>0.32954 -2.5334 0.176383 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0_clone_0_clone'>
+        <pose frame=''>0.331033 -1.733 0.177657 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0_clone_0_clone_clone'>
+        <pose frame=''>0.327333 -0.960861 0.178218 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 6_clone_0_clone_0_clone_clone_clone'>
+        <pose frame=''>0.331221 -0.167196 0.177069 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <pose frame=''>-8.63132 1 1.243402 0 -0 0</pose>
+      <static>1</static>
+    </model>
+
+
+<!-- container 2 - 2 layer -->
+    <model name='container2_2f'>
+      <model name='Big box 7'>
+        <pose frame=''>-0.8508 -2.53569 0.172748 0 0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone'>
+        <pose frame=''>-0.850293 -1.7623 0.176435 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0'>
+        <pose frame=''>-0.852613 -0.964561 0.176453 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0_clone'>
+        <pose frame=''>-0.851649 -0.164524 0.176138 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0_clone_0'>
+        <pose frame=''>0.32954 -2.5334 0.176383 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0_clone_0_clone'>
+        <pose frame=''>0.331033 -1.733 0.177657 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0_clone_0_clone_clone'>
+        <pose frame=''>0.327333 -0.960861 0.178218 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <model name='Big box 7_clone_0_clone_0_clone_clone_clone'>
+        <pose frame=''>0.331221 -0.167196 0.177069 0 -0 0</pose>
+        <static>0</static>
+        <link name='link'>
+          <inertial>
+            <mass>40</mass>
+            <inertia>
+              <ixx>1</ixx>
+              <ixy>0</ixy>
+              <ixz>0</ixz>
+              <iyy>1</iyy>
+              <iyz>0</iyz>
+              <izz>1</izz>
+            </inertia>
+          </inertial>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>1.2 0.8 1.25</size>
+              </box>
+            </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <max_vel>0.1</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+            <max_contacts>10</max_contacts>
+          </collision>
+          <visual name='visual'>
+            <geometry>
+              <mesh>
+                <uri>model://big_box4/meshes/big_box.dae</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+          <gravity>1</gravity>
+        </link>
+      </model>
+      <pose frame=''>0.63132 1 1.243402 0 -0 0</pose>
+      <static>1</static>
+    </model>
 
 <!-- box end -->
+    
     
 <!-- blocking bar start -->
         <!-- blocking bar 1 right -->
@@ -970,8 +1788,13 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
+<<<<<<< HEAD
                             <uri>file:///home/manros/catkin_ws/BlockBar/image/blocking.material</uri>
                         </script>
+=======
+                            <uri>file://~/catkin_ws/BlockBar/image/blocking.material</uri>
+                            </script>
+>>>>>>> 076eea86c02016f259dda68d00b91d774b1d152b
                     </material>
                 </visual>
             </link>
@@ -1090,8 +1913,13 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
+<<<<<<< HEAD
                             <uri>file:///home/manros/catkin_ws/BlockBar/image/blocking.material</uri>
                         </script>
+=======
+                            <uri>file://~/catkin_ws/BlockBar/image/blocking.material</uri>
+                           </script>
+>>>>>>> 076eea86c02016f259dda68d00b91d774b1d152b
                     </material>
                 </visual>
             </link>
@@ -1119,6 +1947,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
             </plugin>
         </model>
         
+<<<<<<< HEAD
         
         <!-- blocking bar 3 -->
         <plugin filename="libSimEventsPlugin.so" name="elevator_event_plugin">
@@ -1238,6 +2067,8 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
             <plugin name="BlockingBar" filename="/home/manros/catkin_ws/BlockBar/build/libblocking.so">
             </plugin>
         </model>
+=======
+>>>>>>> 076eea86c02016f259dda68d00b91d774b1d152b
 <!-- blocking bar end -->
     
     <physics type="ode">
