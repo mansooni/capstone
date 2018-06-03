@@ -14,7 +14,7 @@ def truck_action(loop,conn,data):
 		    if not line: break
 		    if (line.find(data[1]))!=-1:
 				blockbar_action()
-				loop.run_until_complete(blockbar_action())
+				loop.run_until_complete(blockbar_action()) # send topic to gazebo
 				break
 
 	elif data[0]=="finish":

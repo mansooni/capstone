@@ -23,7 +23,8 @@ class image_converter:
     
     self.blocking = False
     self.pub = False
-
+	
+	#connect to socket
     self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     self.sock.connect(("127.0.0.1",8080))
 
@@ -76,7 +77,7 @@ class image_converter:
 				self.blocking_pub.publish(self.blocking)
 				self.pub = True
 				rospy.loginfo('blocking detect')
-				self.sock.sendall("arrive 1".encode())
+				self.sock.sendall("arrive 1".encode()) # send data to control center
 				rospy.loginfo('send data success')
 
     else:
