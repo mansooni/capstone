@@ -5,6 +5,7 @@ import rospy
 import cv2
 import cv_bridge
 import numpy as np
+import socket
 
 from std_msgs.msg import Bool
 from sensor_msgs.msg import Image, CompressedImage
@@ -22,6 +23,9 @@ class image_converter:
     
     self.blocking = False
     self.pub = False
+
+    self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    self.sock.connect(("127.0.0.1",8080))
 
   def callback(self,msg):
     try:
@@ -69,12 +73,12 @@ class image_converter:
             self.blocking = True
             
             if self.pub == False:
-		self.blocking_pub.publish(self.blocking)
-                self.pub = True
-                
-		
-            rospy.loginfo('blocking detect')
-    
+				self.blocking_pub.publish(self.blocking)
+				self.pub = True
+				rospy.loginfo('blocking detect')
+				self.sock.sendall("arrive 1".encode())
+				rospy.loginfo('send data success')
+
     else:
         self.blocking = False
         self.pub = False
@@ -94,8 +98,10 @@ def main(args):
   try:
     rospy.spin()
   except KeyboardInterrupt:
+    sock.close()
     print("Shutting down")
-  cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     main(sys.argv)
+
