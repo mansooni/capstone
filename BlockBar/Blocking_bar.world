@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="world">
+
+        <include>
+            <uri>model://sun</uri>
+        </include>
+
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+
+        <plugin filename="libSimEventsPlugin.so" name="elevator_event_plugin">
+            <region>
+                <name>first_block</name>
+                <volume>
+                    <min>0.25 -0.5 0.0</min>
+                    <max>-0.25 -0.55 0.1</max>
+                </volume>
+            </region>
+            <region>
+                <name>second_block</name>
+                <volume>
+                    <min>0.25 0.5 0.0</min>
+                    <max>-0.25 0.55 0.1</max>
+                </volume>
+            </region>
+            <event>
+                <name>first_block_event</name>
+                <type>occupied</type>
+                <region>first_block</region>
+                <topic>~/blockingbar</topic>
+                <msg_data>1</msg_data>
+            </event>
+
+            <!-- Event publisher for second floor-->
+            <event>
+                <name>second_block_event</name>
+                <type>occupied</type>
+                <region>second_block</region>
+                <topic>~/blockingbar</topic>
+                <msg_data>-1</msg_data>
+            </event>
+        </plugin>
+
+        <model name="box">
+            <pose>0 1 0.05 0 0 0</pose>
+            <link name="box">
+                <collision name="box_collision">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.05 0.1</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="box_visual">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.05 0.1</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+        </model>
+
+        <model name="bar">
+            <link name="bar">
+                <pose>0 0 0.075 0 0 0</pose>
+                <collision name="bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+            <link name="blocking_bar">
+                <pose>-0.24 0.02 0.14 0 0 0</pose>
+                <collision name="blocking_bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.02 0.04</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="blocking_bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.5 0.02 0.04</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <name>blocking</name>
+                            <uri>file:///home/patrick/BlockBar/image/blocking.material</uri>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <joint name="fixed" type="fixed">
+                <pose>0 0 -0.075 0 0 0</pose>
+                <parent>world</parent>
+                <child>bar</child>
+                <axis>
+                    <xyz>0 0 0</xyz>
+                </axis>
+            </joint>
+            <joint name="blocking_bar_joint" type="revolute">
+                <parent>bar</parent>
+                <child>blocking_bar</child>
+                <pose>0.25 0 0 0 0 0</pose>
+                <axis>
+                    <xyz>0 1 0</xyz>
+                    <limit>
+                        <lower>0</lower>
+                        <upper>1.57</upper>
+                    </limit>
+                </axis>
+            </joint>
+            <plugin name="BlockingBar" filename="/home/patrick/BlockBar/build/libblocking.so">
+            </plugin>
+        </model>
+    </world>
+</sdf>

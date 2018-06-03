@@ -1,0 +1,3 @@
+/home/psh/BlockBar/build/CMakeFiles/edit_cache.dir
+/home/psh/BlockBar/build/CMakeFiles/rebuild_cache.dir
+/home/psh/BlockBar/build/CMakeFiles/blocking.dir
