@@ -1788,7 +1788,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file:///home/manros/BlockBar/image/blocking.material</uri>
+                            <uri>file:///home/ubuntu/BlockBar/image/blocking.material</uri>
                             </script>
                     </material>
                 </visual>
@@ -1813,7 +1813,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     </limit>
                 </axis>
             </joint>
-            <plugin name="BlockingBar" filename="/home/manros/BlockBar/build/libblocking.so">
+            <plugin name="BlockingBar" filename="/home/ubuntu/BlockBar/build/libblocking.so">
             </plugin>
         </model>
                 
@@ -1907,7 +1907,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file:///home/manros/BlockBar/image/blocking.material</uri>
+                            <uri>file:///home/ubuntu/BlockBar/image/blocking.material</uri>
                            </script>
                     </material>
                 </visual>
@@ -1932,15 +1932,149 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     </limit>
                 </axis>
             </joint>
-            <plugin name="BlockingBar" filename="/home/manros/BlockBar/build/libblocking.so">
+            <plugin name="BlockingBar" filename="/home/ubuntu/BlockBar/build/libblocking.so">
             </plugin>
         </model>
 <!-- blocking bar end -->
     
     
     
-<!-- traffic light start -->
-        <model name="traffic_bar">
+<!-- parking start -->
+        <!-- parking sign 1 -->
+        <model name="parking_bar">
+            <link name="bar">
+                <pose>-2.8 0 0.075 0 0 0 </pose>
+                <collision name="bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+            <link name="sign_bar">
+                <pose>-2.8 0 0.25 0 0 0</pose>
+                <collision name="sign_bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.3 0.02 0.22</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="sign_bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.3 0.02 0.22</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <name>parking</name>
+                            <uri>file:///home/ubuntu/BlockBar/image/parking.material</uri>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <joint name="fixed" type="fixed">
+                <pose>-2.8 0 -0.075 0 0 0</pose>
+                <parent>world</parent>
+                <child>bar</child>
+                <axis>
+                    <xyz>0 0 0</xyz>
+                </axis>
+            </joint>
+            <joint name="sign_bar_joint" type="revolute">
+                <parent>bar</parent>
+                <child>sign_bar</child>
+                <pose>0.25 7.3 0 0 0 0</pose>
+                <axis>
+                    <xyz>0 1 0</xyz>
+                    <limit>
+                        <lower>0</lower>
+                        <upper>1.57</upper>
+                    </limit>
+                </axis>
+            </joint>
+        </model>
+        
+        <!-- parking sign 2 -->
+        <model name="parking_bar2">
+            <link name="bar">
+                <pose>-11.5 0 0.075 0 0 0 </pose>
+                <collision name="bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.02 0.02 0.15</size>
+                        </box>
+                    </geometry>
+                </visual>
+            </link>
+            <link name="sign_bar">
+                <pose>-11.5 0 0.25 0 0 0</pose>
+                <collision name="sign_bar_collision">
+                    <geometry>
+                        <box>
+                            <size>0.3 0.02 0.22</size>
+                        </box>
+                    </geometry>
+                </collision>
+                <visual name="sign_bar_visual">
+                    <geometry>
+                        <box>
+                            <size>0.3 0.02 0.22</size>
+                        </box>
+                    </geometry>
+                    <material>
+                        <script>
+                            <name>parking</name>
+                            <uri>file:///home/ubuntu/BlockBar/image/parking.material</uri>
+                        </script>
+                    </material>
+                </visual>
+            </link>
+            <joint name="fixed" type="fixed">
+                <pose>-11.5 0 -0.075 0 0 0</pose>
+                <parent>world</parent>
+                <child>bar</child>
+                <axis>
+                    <xyz>0 0 0</xyz>
+                </axis>
+            </joint>
+            <joint name="sign_bar_joint" type="revolute">
+                <parent>bar</parent>
+                <child>sign_bar</child>
+                <pose>0.25 7.3 0 0 0 0</pose>
+                <axis>
+                    <xyz>0 1 0</xyz>
+                    <limit>
+                        <lower>0</lower>
+                        <upper>1.57</upper>
+                    </limit>
+                </axis>
+            </joint>
+        </model>
+        
+<!-- parking end -->
+    
+    
+    
+    
+<!-- light start -->
+ <model name="traffic_bar">
             <link name="bar">
                 <pose>-1 8.8 0.075 0 0 01.571</pose>
                 <collision name="bar_collision">
@@ -1976,7 +2110,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>traffic</name>
-                            <uri>file:///home/manros/BlockBar/image/traffic.material</uri>
+                            <uri>file:///home/ubuntu/BlockBar/image/traffic.material</uri>
                         </script>
                     </material>
                 </visual>
@@ -1989,7 +2123,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <xyz>0 0 0</xyz>
                 </axis>
             </joint>
-            <joint name="light_bar_joint" type="revolute">
+            <joint name="light_bar_bar_joint" type="revolute">
                 <parent>bar</parent>
                 <child>light_bar</child>
                 <pose>0.25 7.3 0 0 0 0</pose>
@@ -2002,8 +2136,10 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </axis>
             </joint>
         </model>
-<!-- traffic light end -->
-    
+<!-- light end -->
+
+
+
     <physics type="ode">
       <gravity>0 0 -9.81</gravity>
       <ode>

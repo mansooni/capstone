@@ -11,9 +11,9 @@ import cv2
 
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image, CompressedImage
-#from geometry_msgs.msg import Twist
 from std_msgs.msg import Bool
 from mavros_msgs.msg import OverrideRCIn
+from time import sleep
 
 class image_converter:
     
@@ -21,19 +21,24 @@ class image_converter:
         self.bridge = cv_bridge.CvBridge()
         self.pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size = 10)
         self.image_sub = rospy.Subscriber("/rover/front_test/image_front_raw", Image, self.callback)
-	self.blocking_sub = rospy.Subscriber("rover/control/blocking", Bool, self.blocking_callback)
+        self.blocking_sub = rospy.Subscriber("rover/control/blocking", Bool, self.blocking_callback)
+        self.parking_sub = rospy.Subscriber("rover/control/parking", Bool, self.parking_callback)
         
         self.line_center = 250
         self.area = 6
         self.line_width = 50
         self.stabilizer = True
-	self.blocking = False
+        self.blocking = False
+        self.parking = False
         
         self.yaw = 0
-        self.throttle = 1900
+        self.throttle = 1700
                 
     def blocking_callback(self, msg):
         self.blocking = msg.data
+
+    def parking_callback(self, msg):
+        self.parking = msg.data
 
     
     def callback(self, msg):
@@ -64,10 +69,6 @@ class image_converter:
         
         
         #h, w, d = dst.shape
-        
-        print 'rows : ', rows
-        print 'cols : ', cols
-        print 'ch : ', ch
         '''
         search_top = h/10 * self.area
         search_bot = search_top + self.line_width
@@ -75,20 +76,12 @@ class image_converter:
         search_left = w/3
         search_right = w * 2/3
         '''
-        
-        
+                
         search_top = rows/10 * self.area
         search_bot = search_top + self.line_width
         search_across = cols/2
         search_left = cols/3
         search_right = cols * 2/3
-        
-        
-        print 'search_top : ', search_top
-        print 'search_bot : ', search_bot
-        print 'search_across : ', search_across
-        print 'search_left : ', search_left
-        print 'search_right : ', search_right 
         
         # modify
         #mask_right[0:search_top, 0:w] = 0
@@ -113,7 +106,12 @@ class image_converter:
         if self.blocking:
             self.throttle = 1500
         else:
-            self.throttle = 1900
+            self.throttle = 1700
+
+        if self.parking:
+            self.throttle = 1500
+        else:
+            self.throttle = 1700
 
         # left
         if M_left['m00'] > 0 and M_right['m00'] <= 0: # and not self.stablilizer:
