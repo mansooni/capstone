@@ -1754,7 +1754,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
 
         <model name="bar_right">
             <link name="bar">
-                <pose>0 8.8 0.075 0 0 01.571</pose>
+                <pose>0 9.0 0.075 0 0 01.571</pose>
                 <collision name="bar_collision">
                     <geometry>
                         <box>
@@ -1771,7 +1771,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <link name="blocking_bar">
-                <pose>0 8.52 0.14 0 0 1.571</pose>
+                <pose>0 8.72 0.14 0 0 1.571</pose>
                 <collision name="blocking_bar_collision">
                     <geometry>
                         <box>
@@ -1794,7 +1794,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <joint name="fixed" type="fixed">
-                <pose>0 7.3 -0.075 0 0 0</pose>
+                <pose>0 7.5 -0.075 0 0 0</pose>
                 <parent>world</parent>
                 <child>bar</child>
                 <axis>
@@ -1873,7 +1873,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
 
         <model name="bar_left">
             <link name="bar">
-                <pose>0 -7.3 0.075 0 0 1.571</pose>
+                <pose>0 -7.7 0.075 0 0 1.571</pose>
                 <collision name="bar_collision">
                     <geometry>
                         <box>
@@ -1890,7 +1890,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <link name="blocking_bar">
-                <pose>0 -7.58 0.14 0 0 1.571</pose>
+                <pose>0 -8.0 0.14 0 0 1.571</pose>
                 <collision name="blocking_bar_collision">
                     <geometry>
                         <box>
@@ -1913,7 +1913,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <joint name="fixed" type="fixed">
-                <pose>0 -7.3 -0.075 0 0 1.571</pose>
+                <pose>0 -7.7 -0.075 0 0 1.571</pose>
                 <parent>world</parent>
                 <child>bar</child>
                 <axis>
@@ -1943,7 +1943,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
         <!-- parking sign 1 -->
         <model name="parking_bar">
             <link name="bar">
-                <pose>-2.8 0 0.075 0 0 0 </pose>
+                <pose>-2.5 0 0.075 0 0 0 </pose>
                 <collision name="bar_collision">
                     <geometry>
                         <box>
@@ -1960,7 +1960,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <link name="sign_bar">
-                <pose>-2.8 0 0.25 0 0 0</pose>
+                <pose>-2.5 0 0.25 0 0 0</pose>
                 <collision name="sign_bar_collision">
                     <geometry>
                         <box>
@@ -1983,7 +1983,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <joint name="fixed" type="fixed">
-                <pose>-2.8 0 -0.075 0 0 0</pose>
+                <pose>-2.5 0 -0.075 0 0 0</pose>
                 <parent>world</parent>
                 <child>bar</child>
                 <axis>
@@ -2007,7 +2007,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
         <!-- parking sign 2 -->
         <model name="parking_bar2">
             <link name="bar">
-                <pose>-11.5 0 0.075 0 0 0 </pose>
+                <pose>-11.6 0 0.075 0 0 0 </pose>
                 <collision name="bar_collision">
                     <geometry>
                         <box>
@@ -2024,7 +2024,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <link name="sign_bar">
-                <pose>-11.5 0 0.25 0 0 0</pose>
+                <pose>-11.6 0 0.25 0 0 0</pose>
                 <collision name="sign_bar_collision">
                     <geometry>
                         <box>
@@ -2047,7 +2047,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <joint name="fixed" type="fixed">
-                <pose>-11.5 0 -0.075 0 0 0</pose>
+                <pose>-11.6 0 -0.075 0 0 0</pose>
                 <parent>world</parent>
                 <child>bar</child>
                 <axis>
@@ -2076,7 +2076,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
 <!-- light start -->
  <model name="traffic_bar">
             <link name="bar">
-                <pose>-1 8.8 0.075 0 0 01.571</pose>
+                <pose>-1 9.0 0.075 0 0 01.571</pose>
                 <collision name="bar_collision">
                     <geometry>
                         <box>
@@ -2093,7 +2093,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <link name="light_bar">
-                <pose>-1 8.8 0.3 0 0 1.571</pose>
+                <pose>-1 9.0 0.3 0 0 1.571</pose>
                 <collision name="light_bar_collision">
                     <geometry>
                         <box>
@@ -2105,7 +2105,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <geometry>
                         <box>
                             <size>0.1 0.02 0.3</size>
-                        </box>
+                        </box>  
                     </geometry>
                     <material>
                         <script>
@@ -2116,7 +2116,7 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                 </visual>
             </link>
             <joint name="fixed" type="fixed">
-                <pose>-1 7.3 -0.075 0 0 0</pose>
+                <pose>-1 9.0 -0.075 0 0 0</pose>
                 <parent>world</parent>
                 <child>bar</child>
                 <axis>

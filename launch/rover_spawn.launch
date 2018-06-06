@@ -20,7 +20,7 @@
   <arg name="verbose" default="true"/>
 
   <!-- Initial pose for the drone -->
-  <arg name="x" default="9.3"/> <!-- [m], positive to the North -->
+  <arg name="x" default="9.6"/> <!-- [m], positive to the North -->
   <arg name="y" default="0.0"/> <!-- [m], negative to the East -->
   <arg name="z" default="0.0"/> <!-- [m], positive Up -->
   <arg name="roll" default="0"/> <!-- [rad] -->

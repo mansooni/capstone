@@ -15,7 +15,7 @@ from sensor_msgs.msg import CompressedImage, Image
 from std_msgs.msg import Bool
 from mavros_msgs.msg import OverrideRCIn
 
-MIN_MATCH_COUNT = 20
+MIN_MATCH_COUNT = 25
 show_matched_points = True
 
 class image_converter:
@@ -119,7 +119,7 @@ class image_converter:
         self.match_pub.publish(self.match)
         
         if self.match:
-            time.sleep(3)
+            time.sleep(5)
         
         cv2.imshow('parking_match', matches_img)
         #cv2.imshow("parking", image)
