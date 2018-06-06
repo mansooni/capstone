@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+
 import roslib
 import sys
 import rospy
@@ -11,7 +12,7 @@ from std_msgs.msg import Bool
 from sensor_msgs.msg import Image, CompressedImage
 from cv_bridge import CvBridge, CvBridgeError
 from mavros_msgs.msg import OverrideRCIn
-
+from std_msgs.msg import String
 
 class image_converter:
 
@@ -21,9 +22,11 @@ class image_converter:
     self.image_sub = rospy.Subscriber("/rover/front/image_front_raw",Image,self.callback)
     self.blocking_pub = rospy.Publisher("rover/control/blocking", Bool, queue_size = 1)
     
+    self.order_pub = rospy.Publisher("move",String,queue_size = 10) # publish goal  
+
     self.blocking = False
     self.pub = False
-	
+
 	#connect to socket
     self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     self.sock.connect(("127.0.0.1",8080))
@@ -79,6 +82,10 @@ class image_converter:
 				rospy.loginfo('blocking detect')
 				self.sock.sendall("arrive 1".encode()) # send data to control center
 				rospy.loginfo('send data success')
+				order = self.sock.recv(10000)
+				self.order_pub.publish(order)
+				rospy.loginfo('recieve data success ' + order)
+
 
     else:
         self.blocking = False
@@ -92,6 +99,7 @@ class image_converter:
     #cv2.imshow("closing", closing)
     
     cv2.waitKey(3)
+
 
 def main(args):
   ic = image_converter()

@@ -1,0 +1,5 @@
+<launch>
+<node name="listener1" pkg="capstone" type="center.py" />
+<node name="erle_rover_followline" pkg="capstone" type="line_follower.py" />
+<node name="image_converter" pkg="capstone" type="blocking.py" />
+</launch>
