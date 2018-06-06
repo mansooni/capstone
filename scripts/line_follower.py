@@ -2,8 +2,8 @@
 # -*- coding:utf-8
 
 import roslib
-import sys
 import rospy
+import sys 
 import numpy as np
 import cv_bridge
 import mavros
@@ -12,6 +12,7 @@ import cv2
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image, CompressedImage
 from std_msgs.msg import Bool
+from std_msgs.msg import String
 from mavros_msgs.msg import OverrideRCIn
 from time import sleep
 
@@ -22,25 +23,42 @@ class image_converter:
         self.pub = rospy.Publisher('/mavros/rc/override', OverrideRCIn, queue_size = 10)
         self.image_sub = rospy.Subscriber("/rover/front_test/image_front_raw", Image, self.callback)
         self.blocking_sub = rospy.Subscriber("rover/control/blocking", Bool, self.blocking_callback)
+<<<<<<< HEAD
         self.parking_sub = rospy.Subscriber("rover/control/parking", Bool, self.parking_callback)
         
+=======
+        self.order_sub = rospy.Subscriber("move",String,self.order_callback)       
+
+
+>>>>>>> 2ac876e3586aa059432dc88a7bbe8b325f9a40e6
         self.line_center = 250
         self.area = 6
         self.line_width = 50
         self.stabilizer = True
         self.blocking = False
+<<<<<<< HEAD
         self.parking = False
         
+=======
+
+
+>>>>>>> 2ac876e3586aa059432dc88a7bbe8b325f9a40e6
         self.yaw = 0
         self.throttle = 1700
                 
     def blocking_callback(self, msg):
         self.blocking = msg.data
 
+<<<<<<< HEAD
     def parking_callback(self, msg):
         self.parking = msg.data
 
     
+=======
+    def order_callback(self,msg):
+		self.order = msg.data
+
+>>>>>>> 2ac876e3586aa059432dc88a7bbe8b325f9a40e6
     def callback(self, msg):
         try:
             image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
