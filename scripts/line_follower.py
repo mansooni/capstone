@@ -121,12 +121,7 @@ class image_converter:
         M_left = cv2.moments(mask_left)
         M_right = cv2.moments(mask_right)
         
-        if self.blocking:
-            self.throttle = 1500
-        else:
-            self.throttle = 1700
-
-        if self.parking:
+        if self.blocking or self.parking:
             self.throttle = 1500
         else:
             self.throttle = 1700

@@ -82,9 +82,7 @@ class image_converter:
 				rospy.loginfo('blocking detect')
 				self.sock.sendall("arrive 1".encode()) # send data to control center
 				rospy.loginfo('send data success')
-				order = self.sock.recv(10000)
-				self.order_pub.publish(order)
-				rospy.loginfo('recieve data success ' + order)
+				
 
 
     else:

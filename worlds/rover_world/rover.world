@@ -1788,7 +1788,6 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/
                     <material>
                         <script>
                             <name>blocking</name>
-                            <uri>file:///home/ubuntu/BlockBar/image/blocking.material</uri>
                             </script>
                     </material>
                 </visual>

@@ -22,8 +22,6 @@ def truck_action(loop,conn,data):
 			if (line.find(data[1]))!=-1:
 				blockbar_action()
 				loop.run_until_complete(blockbar_action()) # send topic to gazebo
-				conn.sendall("A")
-				print "send success"
 
 
 	elif data[0]=="finish":
@@ -31,7 +29,7 @@ def truck_action(loop,conn,data):
 		data.append(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 		f.write(str(data)+"\n")
 		loop = trollius.get_event_loop()
-		loop.run_until_complete(blockbar_action())
+		loop.run_until_complete(blockbar_action()) # send topic to gazebo
 
 
 @trollius.coroutine
@@ -41,16 +39,12 @@ def blockbar_action():
 
 	message = pygazebo.msg.gz_string_pb2.GzString()
 	message.data = "-1"
-	i=0
+
 	while True:
 		yield From(publisher.publish(message))
 		yield From(trollius.sleep(1.0))
 		print message
-		i=i+1
-		if i>=10:
-			i=0
-			break
-
+		
 
 if __name__ == "__main__":
 	while True:
